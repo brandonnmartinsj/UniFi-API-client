@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voucher Create</title>
+</head>
+<body>
+    <h1>Voucher Create</h1>
+    <form action="examples/welcome.php" method="post">
+        <label for="quantity">Voucher count: (between 1 and 50):</label><br>
+        <input type="number" id="quantity" name="quantity" min="1" max="50" value="1"><br>
+        <label for="quantity">Voucher expiration in minutes: (between 1 and 60):</label><br>
+        <input type="number" id="exp" name="exp" min="1" max="60" value="60"><br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Reset">
+      </form>
+</body>
+</html>

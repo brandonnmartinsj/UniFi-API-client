@@ -9,7 +9,10 @@
 /**
  * using the composer autoloader
  */
-require_once 'vendor/autoload.php';
+
+ //require_once 'vendor/autoload.php';
+
+ require_once '/var/www/html/api/vendor/autoload.php';
 
 /**
  * include the config file (place your credentials etc. there if not already present)
@@ -20,16 +23,16 @@ require_once 'config.php';
 /**
  * minutes the voucher is valid after activation (expiration time)
  */
-$voucher_expiration = 60;
+//$voucher_expiration = 60;
 
-//$voucher_expiration = $_POST["exp"];
+$voucher_expiration = $_POST["exp"];
 
 /**
  * the number of vouchers to create
  */
-$voucher_count = 1;
+//$voucher_count = 1;
 
-//$voucher_count = $_POST["quantity"];
+$voucher_count = $_POST["quantity"];
 
 /**
  * The site where you want to create the voucher(s)
@@ -53,8 +56,17 @@ $voucher_result = $unifi_connection->create_voucher($voucher_expiration, $vouche
  */
 $vouchers = $unifi_connection->stat_voucher($voucher_result[0]->create_time);
 
+//$vouchers = $unifi_connection->stat_voucher();
 
 /**
  * provide feedback (the newly created vouchers) in json format
  */
-echo json_encode($vouchers, JSON_PRETTY_PRINT);
+//$resultado = json_encode($vouchers, JSON_PRETTY_PRINT);
+$resultado["create_time"] = $vouchers[0]->create_time;
+$resultado["code"] = $vouchers[0]->code;
+$resultado["duration"] = $vouchers[0]->duration;
+//print_r($resultado);
+//print_r($vouchers);
+
+require_once ('modelo.php');
+

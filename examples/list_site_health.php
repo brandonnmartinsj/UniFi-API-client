@@ -21,7 +21,7 @@ require_once 'config.php';
 /**
  * the short name of the site you wish to query
  */
-$site_id = '<enter your site id here>';
+$site_id = '5d011ed6b16103051b376004';
 
 /**
  * initialize the UniFi API connection class and log in to the controller and pull the requested data

@@ -1956,11 +1956,11 @@ class Client
     public function create_voucher(
         $minutes,
         $count = 1,
-        $quota = 0,
+        $quota = 1,
         $note = '',
-        $up = null,
-        $down = null,
-        $megabytes = null
+        $up = 2000,
+        $down = 2000,
+        $megabytes = 1000
     ) {
         $payload = [
             'cmd'    => 'create-voucher',
