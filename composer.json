@@ -22,7 +22,9 @@
     "require": {
         "php": ">=5.5.0",
         "ext-curl": "*",
-        "ext-json": "*"
+        "ext-json": "*",
+        "twbs/bootstrap": "^5.3",
+        "components/jquery": "^3.7"
     },
     "autoload": {
         "psr-4": {
