@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PHP API usage example
  *
@@ -10,9 +11,9 @@
  * using the composer autoloader
  */
 
- //require_once 'vendor/autoload.php';
+//require_once 'vendor/autoload.php';
 
- require_once '/var/www/html/api/vendor/autoload.php';
+require_once '/var/www/html/api/vendor/autoload.php';
 
 /**
  * include the config file (place your credentials etc. there if not already present)
@@ -54,19 +55,39 @@ $voucher_result = $unifi_connection->create_voucher($voucher_expiration, $vouche
 /**
  * we then fetch the newly created vouchers by the create_time returned
  */
-$vouchers = $unifi_connection->stat_voucher($voucher_result[0]->create_time);
+//$vouchers = $unifi_connection->stat_voucher($voucher_result[0]->create_time);
 
-//$vouchers = $unifi_connection->stat_voucher();
+$vouchers = $unifi_connection->stat_voucher();
 
 /**
  * provide feedback (the newly created vouchers) in json format
  */
-//$resultado = json_encode($vouchers, JSON_PRETTY_PRINT);
-$resultado["create_time"] = $vouchers[0]->create_time;
-$resultado["code"] = $vouchers[0]->code;
-$resultado["duration"] = $vouchers[0]->duration;
+
+ //$a = json_encode($vouchers, JSON_PRETTY_PRINT);
+
+ 
+
+ //print_r($vouchers);
+
+//print_r(array_values($vouchers));
+
+
+// foreach($vouchers as $valor)
+// {
+//     // echo $cur->code;
+//     // echo '|';
+//     $resultado["code"] = $valor->code;
+//     $resultado["duration"] = $valor->duration;
+//     echo $resultado["code"];
+//     echo '|';
+// }
+
+
+// $resultado["create_time"] = $vouchers[0]->create_time;
+// $resultado["code"] = $vouchers[0]->code;
+// $resultado["duration"] = $vouchers[0]->duration;
+
 //print_r($resultado);
-//print_r($vouchers);
 
-require_once ('modelo.php');
 
+require_once('modelo.php');
