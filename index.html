@@ -14,34 +14,44 @@
 
 <body>
 
+
+
+
+
     <div class="container">
-        <div class="row">
-            <div class="col">
+        <h1>Voucher Create</h1>
 
-            </div>
-            <div class="col">
-
-                <h1>Voucher Create</h1>
-                <form action="examples/welcome.php" method="post">
-                    <div class="mb-3">
-                        <label for="quantity" class="form-label">Voucher count: (between 1 and 50):</label>
-                        <input type="number" class="form-control" id="quantity" aria-describedby="quantity"
-                            name="quantity" min="1" max="50" value="1">
-                    </div>
-                    <div class="mb-3">
-                        <label for="number" class="form-label">Voucher expiration in minutes: (between 1 and
-                            60):</label>
-                        <input type="number" class="form-control" id="exp" name="exp" min="1" max="60" value="60">
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
-                </form>
-
-            </div>
-            <div class="col">
-
-            </div>
+        <div>
+            <form action="examples/welcome.php" method="post">
+                <div class="form-group">
+                    <label for="quantity" class="form-label">Voucher count: (between 1 and 50):</label>
+                    <input type="number" class="form-control" id="quantity" aria-describedby="quantity" name="quantity"
+                        min="1" max="50" value="1">
+                </div>
+                <div class="form-group">
+                    <label for="number" class="form-label">Voucher expiration in minutes: (between 1 and
+                        60):</label>
+                    <input type="number" class="form-control" id="exp" name="exp" min="1" max="60" value="60">
+                </div>
         </div>
+
+        <div>
+            <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
+        </div>
+
+        </form>
+
     </div>
+
+
+
+
+
+
+
+
+
+
 
 
 
